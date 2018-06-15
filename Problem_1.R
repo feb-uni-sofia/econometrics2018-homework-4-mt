@@ -59,3 +59,6 @@ mean(houseworkbysex$hours)
 ## j)
 fitAll <- lm(hours ~ female  + male , data = houseworkbysex)
 summary(fitAll)
+
+#when female is FALSE it means that the observed person is male. They are mutually exclusive
+#so we don't have to add estimate of the coefficient beta2.

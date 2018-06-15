@@ -13,7 +13,7 @@ library(ggplot2)
 ## a)
 fit <- lm(C ~ HS , data = crime)
 summary(fit)
-##Beta1 is 1.4860, which is >0.
+##Beta1 is 1.4860, which is > 0.
 #This means that when HS increases C increases as well.
 #Higher percent of people completing high school is connected with higher crime rate.
 
