@@ -30,7 +30,11 @@ summary(fit)
 # The estimate of beta0 is 32.8138. It shows the population average house-work hours for men.
 # The estimate of beta1 = -14.4555  is the difference between the population average house-work hours for women and men.
 
+## NOTE: beta0_hat is the _sample average_ housework time for men. It is an estimate for the population average housework time for men.
+## beta1_hat is the difference of _sample averages_ of work time for women and men. It is an estimate for the difference of population averages.
+
 ## f)
+## Nice!
 # H0: muf <= mum means muf - mum <= 0
 # but we already know that beta1 =  muf - mum
 # so H0: beta1 <= 0 vs. H1: beta1 > 0
@@ -54,11 +58,15 @@ pvalue
 sd(houseworkbysex$hours)
 mean(houseworkbysex$hours)
 #the distributional assumptions of the test
-#are that the observations are normally distributed.
+##are that the observations are normally distributed or that the sample size is large. Here the group sample sizes are large enough to reasonably assume that the CLT holds.
 
+## The assumptions are that the data is normally distributed given group
+## membership (men/women).
 ## j)
 fitAll <- lm(hours ~ female  + male , data = houseworkbysex)
 summary(fitAll)
 
 #when female is FALSE it means that the observed person is male. They are mutually exclusive
-#so we don't have to add estimate of the coefficient beta2.
+                                        #so we don't have to add estimate of the coefficient beta2.
+
+## The reason is multicollinearity caused by including both dummies.

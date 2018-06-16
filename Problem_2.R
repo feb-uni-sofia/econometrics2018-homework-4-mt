@@ -33,13 +33,14 @@ fit2 <- lm(C ~ HS + U, data = crime)
 summary(fit2)
 #Beta1 is -0.5834, which is negative.
 #When the percentage of people completing high school increases
-#the crime rate decreases.
+#the crime rate decreases (given the level of urbanisation!)
 
 #Beta 2 is  0.6825, which is positive.
 #This means that when the percentage of people living in urban areas increases
 #the crime rate also increases.
 
 
+## /score -1 for missing explanation about changing sign.
 ## d)
 fitHS_U <- lm(HS ~ U , data = crime)
 summary(fitHS_U)
@@ -49,7 +50,7 @@ summary(fitHS_U)
 ## e)
 fit3 <- lm(C ~ HS + U + I, data = crime)
 summary(fit3)
-
+?var.test
 var.test(
   lm(C ~ HS , data = crime),
   lm(C ~ I , data = crime) ,
@@ -63,3 +64,4 @@ var.test(
 #H0 means:
 #1)there is no connection between people finishing high school and the crime rate
 #2)there is no connection between the median income in the county and the crime rate
+
